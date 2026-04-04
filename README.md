@@ -122,9 +122,3 @@ pip install -r requirements.txt
 | Phase 3 — external loopback | ⬜ Not started |
 | Phase 4 — eye diagram | ⬜ Not started |
 | Phase 5 — polish & blog | ⬜ Not started |
-
----
-
-## License
-
-MIT
