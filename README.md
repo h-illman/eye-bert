@@ -5,9 +5,6 @@ development board (Intel Agilex 5 SoC, A5ED013BB32AE4S, 138K LEs). External loop
 testing is done via a **Terasic XTS-HSMC** SMA breakout card connected to the board's
 HSMC connector, exposing 4 physical transceiver channels.
 
-Built as a portfolio project targeting Silicon Validation, PHY/IO Design, and
-SoC Platform engineering roles.
-
 ---
 
 ## What it does
@@ -17,12 +14,12 @@ a high-speed transceiver. The same FPGA receives the signal back over an SMA loo
 cable, regenerates the expected PRBS locally, and compares every received bit against
 the expected pattern. Mismatches are counted as bit errors.
 
-By sweeping TX/RX parameters — voltage swing, pre-emphasis, CTLE gain — and counting
+By sweeping TX/RX parameters (voltage swing, pre-emphasis, CTLE gain) and counting
 errors at each operating point, the system builds **BER waterfall curves**. A phase
 interpolator sweep accumulates a 2D histogram of the received signal, rendered as an
 **eye diagram heatmap**.
 
-The HPS ARM core (Linux, Cortex-A55/A76) acts as the controller — writing config
+The HPS ARM core (Linux, Cortex-A55/A76) acts as the controller, writing config
 registers and reading BER counters over an AXI-Lite bridge, running Python sweep
 scripts, and rendering results with Matplotlib.
 
