@@ -1,0 +1,11 @@
+../rtl/prbs_gen.sv:30: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../rtl/prbs_gen.sv:30: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../rtl/prbs_gen.sv:30: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../rtl/prbs_gen.sv:30: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../rtl/prbs_gen.sv:30: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../rtl/prbs_gen.sv:30: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../rtl/prbs_gen.sv:31: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../rtl/prbs_gen.sv:31: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../rtl/eye_sampler.sv:42: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../rtl/axi_csr.sv:138: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../rtl/axi_csr.sv:183: vvp.tgt sorry: Case unique/unique0 qualities are ignored.

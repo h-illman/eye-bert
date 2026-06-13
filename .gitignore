@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+sim/tb_*
+sim/lint_top
+*.vcd
+results/*.npz
+results/*.png
+platform/output_files/
+platform/db/
+platform/qdb/
+platform/tmp-clearbox/
+*.qws
+*.sopcinfo

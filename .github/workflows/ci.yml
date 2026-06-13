@@ -1,0 +1,38 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  rtl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Lint full hierarchy
+        run: make -C sim lint
+      - name: Run all testbenches
+        run: make -C sim all
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.txt pytest
+      - name: Unit tests
+        run: pytest software/tests/ -v
+      - name: End-to-end sweeps in simulation mode
+        run: |
+          cd software/python
+          python sweep.py --mode ber_swing --sim --seed 7 --bits 2e8
+          python sweep.py --mode ber_ctle  --sim --seed 7 --bits 2e8
+          python sweep.py --mode eye       --sim --seed 7
+      - name: Render plots
+        run: |
+          cd software/analysis
+          python plot_ber.py
+          python plot_eye.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sim-plots
+          path: results/*.png
